@@ -1,0 +1,56 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MovementScript : MonoBehaviour
+{
+    [SerializeField] float moveSpeed = 5f; // Adjust the speed as needed
+    [SerializeField] float rotationSpeed = 20; // Adjust the rotation speed as needed
+    float rotationDegrees = 90;
+
+    private Rigidbody2D rb;
+    private bool isMoving = false;
+
+    Vector3 currentRotation;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            isMoving = !isMoving;
+            currentRotation.z = transform.eulerAngles.z;    
+        }
+
+        if(isMoving)
+        {
+            MovePlayer();
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+            RotatePlayer();
+        }
+
+
+    }
+
+    void RotatePlayer()
+    {
+        currentRotation.z += Time.deltaTime * rotationSpeed;
+        float rotation = Mathf.Sin(currentRotation.z) * rotationDegrees;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotation);
+
+    }
+
+    void MovePlayer()
+    {
+        // Move the player in the direction they are facing
+        Vector2 moveDirection = transform.up;
+        rb.velocity = moveDirection * moveSpeed;
+    }
+}
