@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MovementScript : MonoBehaviour
@@ -12,6 +10,8 @@ public class MovementScript : MonoBehaviour
     private bool isMoving = false;
 
     Vector3 currentRotation;
+
+    [SerializeField] GameObject fogObject;
 
     void Start()
     {
@@ -43,7 +43,7 @@ public class MovementScript : MonoBehaviour
             RotatePlayer();
         }
 
-
+        UpdateFogPosition();
     }
 
     void RotatePlayer()
@@ -58,5 +58,10 @@ public class MovementScript : MonoBehaviour
         // Move the player in the direction they are facing
         Vector2 moveDirection = transform.up;
         rb.velocity = moveDirection * moveSpeed;
+    }
+
+    void UpdateFogPosition()
+    {
+        fogObject.transform.position = transform.position;
     }
 }
