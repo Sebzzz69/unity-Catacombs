@@ -2,6 +2,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
+// This needs to be placed on a gameobject combined with
+// the script "Light 2D" from the packaged "Universal RP". 
+
 public class ExtraLightEffects : MonoBehaviour
 {
     Light2D lightScript;
