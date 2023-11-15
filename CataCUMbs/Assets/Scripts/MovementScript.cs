@@ -23,7 +23,14 @@ public class MovementScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isMoving = !isMoving;
-            currentRotation.z = transform.eulerAngles.z;    
+            currentRotation.z = transform.rotation.z;
+
+            Debug.Log(currentRotation.z);
+            Debug.Log(transform.rotation.z);
+        }
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            isMoving = !isMoving;
         }
 
         if(isMoving)
@@ -44,7 +51,6 @@ public class MovementScript : MonoBehaviour
         currentRotation.z += Time.deltaTime * rotationSpeed;
         float rotation = Mathf.Sin(currentRotation.z) * rotationDegrees;
         transform.rotation = Quaternion.Euler(0f, 0f, rotation);
-
     }
 
     void MovePlayer()
