@@ -11,8 +11,9 @@ public class ExtraLightEffects : MonoBehaviour
 
     [Header("Flickering Lights")]
     [SerializeField] bool FlickeringLights;
-    [SerializeField] float minFlickDelay;
-    [SerializeField] float maxFlickDelay;
+    // In Seconds
+    [SerializeField] float minFlickTriggerDelay;
+    [SerializeField] float maxFlickTriggerDelay;
 
     private void Awake()
     {
@@ -23,7 +24,7 @@ public class ExtraLightEffects : MonoBehaviour
     {
         if (FlickeringLights)
         {
-            InvokeRepeating("TriggerFlickeringLights", Random.Range(minFlickDelay, maxFlickDelay), Random.Range(minFlickDelay, maxFlickDelay));
+            InvokeRepeating("TriggerFlickeringLights", Random.Range(minFlickTriggerDelay, maxFlickTriggerDelay), Random.Range(minFlickTriggerDelay, maxFlickTriggerDelay));
         }
     }
 
