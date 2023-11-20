@@ -7,6 +7,6 @@ public class Door : MonoBehaviour
     public void OpenDoor()
     {
         Destroy(this.gameObject);
-        Debug.Log("Door Destoyred");
+        Debug.Log("Door Destroyed");
     }
 }

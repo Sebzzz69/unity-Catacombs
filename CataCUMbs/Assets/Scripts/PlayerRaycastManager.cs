@@ -5,14 +5,14 @@ using UnityEngine;
 public class PlayerRaycastManager : MonoBehaviour
 {
 
-    private float raycastDistance = .3f;
+    private float raycastDistance = .5f;
 
     [Header("GameObjects")]
     [SerializeField] GameObject targetDirection;
     [SerializeField] GameObject targetPosition;
     [Header("Scipts")]
     [SerializeField] KeyGrabberScript keyGrabberScript;
-    [SerializeField] Key keyScript;
+    Key keyScript;
 
     private void Update()
     {
