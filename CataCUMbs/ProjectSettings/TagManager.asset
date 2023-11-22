@@ -7,6 +7,8 @@ TagManager:
   - Hazard
   - Point
   - Counter
+  - Key
+  - Door
   layers:
   - Default
   - TransparentFX
