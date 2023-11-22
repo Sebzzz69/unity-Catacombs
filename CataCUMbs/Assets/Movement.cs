@@ -25,6 +25,12 @@ public class PlayerMovement : MonoBehaviour
 
         // Move the player
         transform.Translate(movement * speed * Time.deltaTime);
+
+        // For example, you might use the 'R' key to trigger a restart
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            GameManager.instance.RestartScene();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
