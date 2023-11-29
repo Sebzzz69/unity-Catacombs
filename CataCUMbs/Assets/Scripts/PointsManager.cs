@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,8 +7,8 @@ public class PointsManager : MonoBehaviour
     public int playerPoints = 0;
 
     public GameObject textGameObject; // GameObject containing the Text component
-    [SerializeField]
-    private Text pointsText; // Reference to the UI text element
+
+   [SerializeField] private TextMeshProUGUI pointsText; // Reference to the UI text element
     public int pointsToAdd = 1;
 
     void Start()
@@ -22,7 +23,7 @@ public class PointsManager : MonoBehaviour
         // Try to find the Text component on the GameObject
         if (textGameObject != null)
         {
-            pointsText = textGameObject.GetComponent<Text>();
+            //pointsText = textGameObject.GetComponent<TextMeshPro>();
             if (pointsText != null)
             {
                 UpdatePointsUI();
@@ -47,6 +48,7 @@ public class PointsManager : MonoBehaviour
         if (pointsText != null)
         {
             UpdatePointsUI();
+            Debug.Log("penis");
         }
     }
 
