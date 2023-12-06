@@ -13,7 +13,7 @@ public class AutoButtonSelect : MonoBehaviour
         currentButton = 0;
         buttons[currentButton].Select();
 
-        //InvokeRepeating("SelectButton", 1f, 1f);
+        InvokeRepeating("SelectButton", 1f, 1f);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {

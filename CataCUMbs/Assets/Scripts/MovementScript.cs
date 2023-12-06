@@ -3,8 +3,8 @@ using UnityEngine;
 public class MovementScript : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 5f; // Adjust the speed as needed
-    [SerializeField] float rotationSpeed = 20; // Adjust the rotation speed as needed
-    float rotationDegrees = 75;
+    [SerializeField] float rotationSpeed = .01f; // Adjust the rotation speed as needed
+    float rotationDegrees = 180;
 
     private Rigidbody2D rb;
     private bool isMoving = false;
